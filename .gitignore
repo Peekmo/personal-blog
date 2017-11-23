@@ -1,0 +1,8 @@
+user/config/
+cache/
+logs/
+vendor/
+*.swo
+*.swp
+.DS_Store
+tags

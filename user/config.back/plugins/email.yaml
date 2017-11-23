@@ -1,0 +1,13 @@
+enabled: true
+from: XXXX 
+to: XXXX 
+mailer:
+  engine: smtp
+  smtp:
+    server: XXXX 
+    port: XXXX
+    encryption: XXXX 
+    user: XXXX
+    password: XXXX
+  sendmail:
+    bin: '/usr/sbin/sendmail'

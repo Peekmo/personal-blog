@@ -1,0 +1,69 @@
+enabled: true
+
+form:
+    name: comments
+    fields:
+        - name: name
+          label: Pseudo 
+          placeholder: Entrez un pseudo 
+          autocomplete: on
+          type: text
+          validate:
+            required: true
+
+        - name: email
+          label: Email 
+          placeholder: Entrez votre adresse email 
+          type: email
+          validate:
+            required: true
+
+        - name: text
+          label: Message 
+          placeholder: Votre message... 
+          type: textarea
+          validate:
+            required: true
+
+        - name: date
+          type: hidden
+          process:
+            fillWithCurrentDateTime: true
+
+        - name: title
+          type: hidden
+          evaluateDefault: grav.page.header.title
+
+        - name: lang
+          type: hidden
+          default: 'fr' 
+
+        - name: path
+          type: hidden
+          evaluateDefault: grav.uri.path
+
+        - name: g-recaptcha-response
+          label: Captcha
+          type: captcha
+          recaptcha_site_key: XXXX 
+          recaptcha_not_validated: 'Captcha not valid!'
+          validate:
+            required: true
+          process:
+            ignore: true
+
+    buttons:
+        - type: submit
+          value: Commenter 
+
+    process:
+        - captcha:
+            recaptcha_secret: XXXX 
+            #- email:
+            #subject: Nouveau commentaire 
+            #body: "{% include 'forms/data.html.twig' %}"
+        - addComment:
+        - message: Merci pour votre commentaire 
+        - reset: true
+
+
