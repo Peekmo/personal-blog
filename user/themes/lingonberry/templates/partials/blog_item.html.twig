@@ -137,6 +137,7 @@
   </div>
   {% if show_prev_next %}
   <div class="post-nav">
+
     {% if not page.isFirst %}
     <a class="post-nav-newer" href="{{ page.nextSibling.url }}"><i class="fa fa-chevron-left"></i> Suivant</a>
     {% endif %}
@@ -148,6 +149,9 @@
   </div>
   {% endif %}
 
+  <div class="blog-socials">
+      {% include 'partials/socialbuttons.html.twig' with {'url' : page.url} %}
+  </div>
 
   {% if not truncate %}
   {% if config.plugins.jscomments.enabled and config.plugins.jscomments.provider %}

@@ -2381,3 +2381,12 @@ p.form-allowed-tags {
 	.credits span { display: none; }
 
 }
+
+/*----------------------------
+ * Custom
+ * ---------------------------*/
+.blog-socials {
+    padding: 10px;
+    width: 300px;
+    float: right;   
+}
