@@ -1,7 +1,7 @@
 user/config/
-cache/
-logs/
-vendor/
+/cache/*
+/logs/*
+/vendor/
 *.swo
 *.swp
 .DS_Store
